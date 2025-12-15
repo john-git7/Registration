@@ -200,31 +200,33 @@ const isStep3Valid = () => {
             />
 
            <div>
-          <p className="text-lg font-medium ">
-            Team Size
-          </p>
+  <p className="text-lg font-medium ">
+    Team Size
+  </p>
 
-  <div className="grid grid-cols-4 gap-3">
+  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
     {[1, 2, 3, 4].map(n => (
       <button
         key={n}
+        type="button"
         onClick={() => setTeamSize(n)}
-        className={`rounded-xl p-4 border transition ${
+        className={`rounded-xl border p-4 text-center transition ${
           teamSize === n
-            ? "bg-indigo-600 text-white"
-            : "bg-white hover:bg-gray-50"
+            ? "border-indigo-600 bg-indigo-50 shadow-sm"
+            : "border-gray-200 hover:border-indigo-400"
         }`}
       >
-        <div className="text-xl">
-          {"👤".repeat(n)}
-        </div>
-        <p className="text-xs mt-2">
-          {n} Member{n > 1 && "s"}
+        <p className="text-2xl font-semibold text-gray-900">
+          {n}
+        </p>
+        <p className="text-xs text-gray-500 mt-1">
+          {n === 1 ? "Solo" : `Members`}
         </p>
       </button>
     ))}
   </div>
 </div>
+
 
 
 
